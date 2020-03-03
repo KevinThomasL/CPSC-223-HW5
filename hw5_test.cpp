@@ -166,7 +166,7 @@ TEST(BasicListTest, AdvancedRemoveElems) {
 
 // Test 9
 // Tests to make sure range can include entire list
-// and include larger numbers
+// and include larger/non-existent numbers
 TEST(BasicListTest, AdvancedRange) {
   BinSearchCollection<int,string> c;
   c.add(50, "e");
@@ -181,8 +181,8 @@ TEST(BasicListTest, AdvancedRange) {
   c.find(20, 40, vs);
   ASSERT_EQ(3, vs.size());
   vector<string> vs2;
-  c.find(10, 2000, vs2);
-  ASSERT_EQ(8, vs2.size());
+  c.find(15, 2000, vs2);
+  ASSERT_EQ(7, vs2.size());
   // note that the following "find" is a C++ built-in function
   ASSERT_EQ(vs.end(), find(vs.begin(), vs.end(), "a"));
   ASSERT_NE(vs.end(), find(vs.begin(), vs.end(), "b"));
